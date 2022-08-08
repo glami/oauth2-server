@@ -13,8 +13,11 @@ trait ScopeTrait
 {
     /**
      * Serialize the object to the scopes string identifier when using json_encode().
+     *
+     * @return string
      */
-    public function jsonSerialize(): mixed
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize()
     {
         return $this->getIdentifier();
     }
